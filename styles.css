@@ -1,0 +1,221 @@
+:root {
+    --bg: #0f172a; 
+    --text: #94a3b8;
+    --white: #e2e8f0;
+    --highlight: #5eead4; 
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.left-side {
+    width: 45%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-side h1 { color: var(--white); font-size: 3rem; }
+.left-side h2 { color: var(--white); font-size: 1.2rem; margin: 10px 0; font-weight: 500; }
+.left-side p { max-width: 300px; line-height: 1.5; }
+
+.nav-menu { display: flex; flex-direction: column; gap: 15px; margin-top: 50px; }
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+.nav-menu a span { margin-right: 10px; transition: 0.3s; width: 30px; border-top: 1px solid var(--text); }
+.nav-menu a:hover { color: var(--white); }
+.nav-menu a:hover span { width: 60px; border-color: var(--white); }
+
+.right-side { width: 55%; padding: 100px 0; }
+section { margin-bottom: 100px; }
+
+.card, .exp-item {
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card:hover, .exp-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+h3, h4 { color: var(--white); margin-bottom: 8px; }
+.date { font-size: 0.75rem; min-width: 100px; padding-top: 5px; }
+
+.social-links { display: flex; gap: 20px; }
+.social-links a { color: var(--text); transition: 0.3s; }
+.social-links a:hover { color: var(--white); }
+
+/* Responsividade básica */
+@media (max-width: 1000px) {
+    .layout { flex-direction: column; padding: 20px; }
+    .left-side { width: 100%; height: auto; position: relative; padding: 50px 0; }
+    .right-side { width: 100%; }
+    .nav-menu { display: none; } 
+}
+
+.profile-area {
+    margin-bottom: 30px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--highlight);
+    padding: 4px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.college-logo {
+    border-radius: 20px;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.project-video video {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease;
+     margin: 10px;
+}
+
+.project-video:hover video {
+    border-color: var(--highlight); 
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 10px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+     margin: 10px;
+}
+
+.footer-sidebar {
+    margin-top: auto; 
+    padding-bottom: 20px;
+}
+
+.cert-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 10px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.cert-img {
+    width: 180px; 
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    filter: grayscale(100%); 
+    transition: all 0.4s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.cert-img:hover {
+    filter: grayscale(0%); 
+    transform: scale(1.05); 
+    border-color: var(--highlight); 
+    box-shadow: 0 0 20px rgba(94, 234, 212, 0.2); 
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    margin: 0; 
+    font-size: 2.5rem; 
+}
+
+.profile-pic-inline {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 2px solid var(--highlight); 
+    padding: 3px;
+}
+
+.left-side h2, .left-side p {
+    margin-left: 0;
+}
+/* Estilo do Rodapé Global */
+footer {
+    padding: 40px 10%;
+    text-align: center;
+    background-color: var(--bg); /* Cor de fundo do site */
+    border-top: 1px solid var(--accent); /* Linha fina de separação */
+    color: var(--text); /* Cor do texto cinza claro */
+    font-size: 0.8rem;
+    margin-top: 50px;
+}
+
+/* Ajuste para telas grandes: Rodapé fica só na coluna da direita */
+@media (min-width: 1000px) {
+    footer {
+        /* Garante que o rodapé não ocupe o espaço da coluna fixa esquerda */
+        margin-left: 45%; 
+        width: 55%;
+    }
+}
